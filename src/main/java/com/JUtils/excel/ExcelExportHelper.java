@@ -89,7 +89,7 @@ public class ExcelExportHelper {
 	/**
 	 * @param datePatter 
 	 * 					指定时间格式
-	 * @param imageWidth 
+	 * @param imageWidth
 	 * 					指定图片的宽度
 	 * @param imageHeight 
 	 * 					指定图片的高度
@@ -345,7 +345,7 @@ public class ExcelExportHelper {
 	 */
 	public List<HSSFWorkbook> exportExcelForBigData(String[] header,List<Object> excelList,String sheetTitle,
 			String flag){
-		List<HSSFWorkbook> list = new ArrayList<>();    //创建表数据结果集
+		List<HSSFWorkbook> list = new ArrayList<HSSFWorkbook>();    //创建表数据结果集
 
 		//判断需要生成几个Excel
 		int num  = excelList.size() % maxRowCount == 0 ? excelList.size() / maxRowCount : excelList.size() / maxRowCount + 1;
@@ -402,7 +402,7 @@ public class ExcelExportHelper {
 	 */
 	public List<HSSFWorkbook> exportExcelForBigData(String[] header,String[] properties,
 			List<Object> excelList,String sheetTitle, String flag){
-		List<HSSFWorkbook> list = new ArrayList<>();    //创建表数据结果集
+		List<HSSFWorkbook> list = new ArrayList<HSSFWorkbook>();    //创建表数据结果集
 		// 判断需要生成几个Excel
 		int num = excelList.size() % maxRowCount == 0 ? excelList.size() / maxRowCount : excelList.size() / maxRowCount + 1;
 

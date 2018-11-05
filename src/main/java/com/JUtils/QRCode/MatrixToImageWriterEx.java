@@ -9,6 +9,7 @@ import java.util.Hashtable;
 
 import javax.imageio.ImageIO;
 
+import com.JUtils.math.RandomUtils;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
@@ -34,7 +35,7 @@ public class MatrixToImageWriterEx {
         hints.put(EncodeHintType.CHARACTER_SET, "utf-8");  
         // 指定纠错等级
 		hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
-		hints.put(EncodeHintType.MARGIN, 1);
+//		hints.put(EncodeHintType.MARGIN, 1);
         BitMatrix matrix = null;  
         try {  
             matrix = new MultiFormatWriter().encode(content, BarcodeFormat.QR_CODE, width, height, hints); 
@@ -179,6 +180,11 @@ public class MatrixToImageWriterEx {
 		} catch (Exception e) {   //捕捉异常后不做任何处理，防止图片路径错误而导致二维码生成失败
 			
 		}
+	}
+
+	public static void main(String[] args) {
+		String random = RandomUtils.generateString(10);   //10位随机数
+		System.out.println(random);
 	}
 	
 }

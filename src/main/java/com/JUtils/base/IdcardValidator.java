@@ -251,4 +251,9 @@ public class IdcardValidator {
 		
 		return Integer.parseInt(sex) % 2==0 ? 0:1;
 	}
+
+	public static void main(String[] args) {
+		IdcardValidator IdcardValidator=new IdcardValidator();
+		IdcardValidator.isValidate18Idcard("220106198801181210");
+	}
 }
