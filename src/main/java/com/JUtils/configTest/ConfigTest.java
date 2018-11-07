@@ -26,9 +26,9 @@ public class ConfigTest {
             pro.store(oFile, null);
             in.close();
             oFile.close();
-            Map<String, String> data=new HashMap<String, String>();
-            data.put("yy","yy");
-            data.put("bb","bb");
+            Map<String, String> data = new HashMap<String, String>();
+            data.put("yy", "yy");
+            data.put("bb", "bb");
             setProperty(data);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -49,12 +49,12 @@ public class ConfigTest {
 //接下来就可以随便往配置文件里面添加内容了
 //			props.setProperty(key, value);
             if (data != null) {
-            Iterator<Map.Entry<String, String>> iter = data.entrySet().iterator();
-            while (iter.hasNext()) {
-                Map.Entry<String, String> entry = iter.next();
-                props.setProperty(entry.getKey().toString(), entry.getValue().toString());
+                Iterator<Map.Entry<String, String>> iter = data.entrySet().iterator();
+                while (iter.hasNext()) {
+                    Map.Entry<String, String> entry = iter.next();
+                    props.setProperty(entry.getKey().toString(), entry.getValue().toString());
+                }
             }
-        }
 //在保存配置文件之前还需要取得该配置文件的输出流，<span style="color: #ff0000; font-size: medium;">切记，</span>如果该项目是需要导出的且是一个非WEB项目，则该配置文件应当放在根目录下，否则会提示找不到配置文件
             OutputStream out = new FileOutputStream("config.properties");
 //最后就是利用Properties对象保存配置文件的输出流到文件中;
