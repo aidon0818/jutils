@@ -1,6 +1,7 @@
 package com.JUtils.configTest;
 
 import java.io.*;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
@@ -19,12 +20,16 @@ public class ConfigTest {
             String key = "name";
             String name = pro.getProperty(key);
             System.out.println(name);
-            in.close();
             ///保存属性到b.properties文件
             FileOutputStream oFile = new FileOutputStream("a.properties", true);//true表示追加打开
             pro.setProperty("phone", "10086");
             pro.store(oFile, null);
+            in.close();
             oFile.close();
+            Map<String, String> data=new HashMap<String, String>();
+            data.put("yy","yy");
+            data.put("bb","bb");
+            setProperty(data);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
